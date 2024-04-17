@@ -36,7 +36,10 @@ public class CharacterRoleplayServerApplication {
 					"Inspector", "Watcher of the city", "Bow"));
 			characterRepo.save(new CharacterModel(null, "Billy", "Sansa Dale", "Skeleton",
 					"Healer", "helps people", "Sword"));
+					
 			userRepo.save(new UserModel("Saad", "12345"));
+			userRepo.save(new UserModel("Hamza", "ActualPassword"));
+			userRepo.save(new UserModel("Billy", "FriendlyFriend"));
 		};
 	}
 
