@@ -1,6 +1,5 @@
 package com.example.characterroleplayserver.service.implementation;
 
-import com.example.characterroleplayserver.model.CharacterModel;
 import com.example.characterroleplayserver.model.UserModel;
 import com.example.characterroleplayserver.repo.UserRepo;
 import com.example.characterroleplayserver.service.UserService;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
-import static java.lang.Boolean.TRUE;
 
 @RequiredArgsConstructor
 @Service
