@@ -1,0 +1,21 @@
+<h2> Employee List </h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> CharName </th>
+            <th> Race </th>
+            <th> Class </th>
+            <th> Desc </th>
+            <th> Equip </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let character of characters" >
+            <td> {{ character.char_name }} </td>
+            <td> {{ character.race }} </td>
+            <td> {{ character.classtype }} </td>
+            <td> {{ character.description }} </td>
+            <td> {{ character.equipment }} </td>
+        </tr>
+    </tbody>
+</table>

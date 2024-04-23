@@ -7,15 +7,17 @@ import { catchError, map, startWith } from 'rxjs/operators';
 import { AppState } from './interface/app-state';
 import { DataState } from './enum/data-state.enum';
 import { MsgResponse } from './interface/msg-response';
+import { CharacterListComponent } from './character-list/character-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, CharacterListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
+  title = `Test Site for Character Roleplay`;
   appState$: Observable<AppState<MsgResponse>>;
   constructor(private characterService: CharacterService) {}
 
