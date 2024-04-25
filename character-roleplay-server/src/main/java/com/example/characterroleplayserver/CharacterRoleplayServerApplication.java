@@ -32,7 +32,7 @@ public class CharacterRoleplayServerApplication {
 		return args -> {
 			characterRepo.save(new CharacterModel(null, "Saad", "Gavil Slayer", "Elf",
 					"Wizard", "Hunter of goblins", "Staff"));
-			characterRepo.save(new CharacterModel(null, "Saad", "Manza", "Demon",
+			characterRepo.save(new CharacterModel(null, "Saad", "Manza Burgess", "Demon",
 					"Fighter", "A danger to the city", "None"));
 			characterRepo.save(new CharacterModel(null, "Hamza", "David Erasictar", "Human",
 					"Inspector", "Watcher of the city", "Bow"));

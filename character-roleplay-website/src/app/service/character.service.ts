@@ -58,6 +58,6 @@ export class CharacterService {
 
     private handleError(error: HttpErrorResponse): Observable<never> {
         console.log(error)
-        return throwError (`ERROR found -- code: ${error.status}`);
+        return throwError (`ERROR found -- code: ${error.status}. You might have accessed an invalid user.`);
     }
 }
