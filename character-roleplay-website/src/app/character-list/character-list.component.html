@@ -8,7 +8,7 @@
         <br/> 
     </div>
     
-    <ng-container *ngIf="(userCharacters$ | async) as userCharacters" [ngSwitch]="userCharacters.dataState">
+    <ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.dataState">
         <ng-container *ngSwitchCase="DataState.LOADING_STATE">
             <div class="col-md-12 single-note-item text-center">
                 <div class="spinner-border text-info" role="status"></div>
@@ -26,7 +26,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor = "let character of userCharacters.appData.data.characters" >
+                    <tr *ngFor = "let character of appState.appData.data.characters" >
                         <td> {{ character.char_name }} </td>
                         <td> {{ character.race }} </td>
                         <td> {{ character.classtype }} </td>
@@ -38,8 +38,10 @@
         </ng-container>
         <ng-container *ngSwitchCase="DataState.ERROR_STATE">
             <div class="alert-danger">
-                {{ userCharacters.error }}
+                {{ appState.error }}
             </div>
         </ng-container>
     </ng-container>
+
+    <div style="margin-bottom: 75px;"></div>
 </div>

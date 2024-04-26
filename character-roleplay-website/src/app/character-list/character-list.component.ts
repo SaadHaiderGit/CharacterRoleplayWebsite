@@ -1,7 +1,7 @@
 import { DataState } from './../enum/data-state.enum';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { Character } from '../interface/character';
 import { CharacterService } from '../service/character.service';
 import { of, Observable } from 'rxjs';
@@ -21,16 +21,20 @@ import { UserService } from '../service/user.service';
 export class CharacterListComponent implements OnInit {
 
   characters: Character[];
-  userCharacters$: Observable<AppState<MsgResponse>>;
+  appState$: Observable<AppState<MsgResponse>>;
   readonly DataState = DataState;
   user: string = ""
 
-  constructor(private characterService: CharacterService, private userService: UserService) {
+  constructor(public router: Router, private characterService: CharacterService, private userService: UserService) {
     this.userService.getSessionUser.subscribe(val => this.user = val);;
   }
 
   ngOnInit(): void {
-    this.userCharacters$ = this.characterService.user_characters$(this.user)
+    this.display();
+  }
+
+  display(): void {
+    this.appState$ = this.characterService.all_characters$
     .pipe(
       map(response =>  {
         return { dataState: DataState.LOADED_STATE, appData: response }
@@ -41,4 +45,5 @@ export class CharacterListComponent implements OnInit {
       })
     );  
   }
+
 }
