@@ -8,7 +8,7 @@ Postgres is necessary for this project. Make sure you have downloaded Postgres b
 
 Clone the repository to a folder of your choosing. In the character-roleplay-server folder, there is an application.yml. It includes an url for the Postgres database, along with a username and password.
 
-![image](https://github.com/SaadHaiderGit/CharacterRoleplayWebsite/assets/118562950/00849faa-a675-435d-8c62-4607ab157d2d)
+![image](https://github.com/SaadHaiderGit/CharacterRoleplayWebsite/assets/118562950/aa6da21a-6f2d-4082-a2a9-062d0e1df656)
 
 Create a matching username and password in order for the backend server to access Postgres, then create a new database called 'character'. If you have a pre-existing database you want to use instead, you can change the application.yml's URL to `jdbc:postgresql://localhost:5432/{name_goes_here}`. You can also change the application.yml's values for username and password to a pre-existing combination you have saved in your Postgres application, if you so wish.
 
