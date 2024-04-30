@@ -1,0 +1,53 @@
+
+
+<div class="container">
+    <div class="text-center">
+        <br/>
+        <h2> Character List </h2>
+        <p> All available characters you've created under your account are displayed below.</p>
+        <br/> 
+    </div>
+    
+    <ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.dataState">
+        <ng-container *ngSwitchCase="DataState.LOADING_STATE">
+            <div class="col-md-12 single-note-item text-center">
+                <div class="spinner-border text-info" role="status"></div>
+            </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="DataState.LOADED_STATE">
+            <table class = "table table-striped">
+                <thead>
+                    <tr>
+                        <th> Name </th>
+                        <th> Race </th>
+                        <th> Class </th>
+                        <th> Desc </th>
+                        <th> Equip </th>
+                        <th> Actions </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let character of appState.appData.data.characters.reverse()" >
+                        <td> {{ character.char_name }} </td>
+                        <td> {{ character.race }} </td>
+                        <td> {{ character.classtype }} </td>
+                        <td> {{ character.description }} </td>
+                        <td> {{ character.equipment }} </td>
+                        <td>
+                            <button (click) = "updateCharacter(character.char_id)" class = "btn btn-info"> Update</button>
+                            <button (click) = "deleteCharacter(character.char_id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+        <ng-container *ngSwitchCase="DataState.ERROR_STATE">
+            <div class="alert-danger">
+                {{ appState.error }}
+            </div>
+        </ng-container>
+    </ng-container>
+
+    <div style="margin-bottom: 75px;"></div>
+</div>
