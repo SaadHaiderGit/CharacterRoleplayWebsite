@@ -11,7 +11,7 @@ import { User } from './../interface/user';
 @Injectable({providedIn: 'root'})
 export class UserService {
     private readonly apiUrl = 'http://localhost:8080';
-    private sessionUser = new BehaviorSubject("Saad"); //TK; this should be blank in the final ver., once login is implemented
+    private sessionUser = new BehaviorSubject("");      
     getSessionUser = this.sessionUser.asObservable();
 
 

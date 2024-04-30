@@ -1,0 +1,34 @@
+<div class="col-md-6 offset-md-3">
+    <br/>
+    <h2 class="center-text"> Login to Character Roleplay </h2>
+    <p class="center-text"> Welcome to the Character Roleplay website! Enter your credentials below to access your account.
+        Please note that credientals are CaSe SeNsItIvE.</p>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> Username </label>
+            <input type="text" class ="form-control" id = "username"
+            [(ngModel)] = "tempUser.username" name = "username">
+            <!--<div *ngIf="(tempCharacter.char_name === '')">
+                <p style="color: red; font-size: small;">Required</p>
+            </div>-->
+        </div>
+    
+        <div class="form-group">
+            <label> Password </label>
+            <input type="text" class ="form-control" id = "password"
+            [(ngModel)] = "tempUser.password" name = "password">
+        </div>
+        
+        <br/>
+
+        <button class = "btn btn-success" type = "submit">Login</button>
+        <div *ngIf="(badValues)">
+            <p class="center-text" style="color: red; font-size: small;">Incorrect username and/or password</p>
+        </div>
+        <div *ngIf="(emptyValues)">
+            <p class="center-text" style="color: red; font-size: small;">Missing username and/or password</p>
+        </div>
+    
+    </form>
+</div> 

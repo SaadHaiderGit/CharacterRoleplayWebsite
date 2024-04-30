@@ -1,0 +1,31 @@
+<div class="col-md-6 offset-md-3">
+    <br/>
+    <h2 class="center-text"> Roll Dice </h2>
+    <form (ngSubmit) = "onSubmit()">
+        <div class="form-group">
+            <label> Number of dice to use</label>
+            <input type="number" class ="form-control" id = "num"
+            [(ngModel)] = "dice.num" name = "num">
+            <!--<div *ngIf="(tempCharacter.char_name === '')">
+                <p style="color: red; font-size: small;">Required</p>
+            </div>-->
+        </div>
+    
+        <div class="form-group">
+            <label> Number of sides per die</label>
+            <input type="number" class ="form-control" id = "val"
+            [(ngModel)] = "dice.val" name = "val">
+        </div>
+    
+        <br/>
+
+        <button class = "btn btn-success" type = "submit">Submit</button>
+        <p style="color: red" *ngIf="(badInput)"> You must input number values in both fields </p>
+        <br/>
+        <br/>
+
+        <h3 class="text-center" *ngIf="(roll != null)"> Your dice total is: {{roll.total}}! </h3>
+        <p class="text-center" *ngIf="(roll != null)"> {{roll.output}} </p>
+        
+    </form>
+</div> 

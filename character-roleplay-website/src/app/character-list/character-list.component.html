@@ -23,15 +23,21 @@
                         <th> Class </th>
                         <th> Desc </th>
                         <th> Equip </th>
+                        <th> Actions </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor = "let character of appState.appData.data.characters" >
+                    <tr *ngFor = "let character of appState.appData.data.characters.reverse()" >
                         <td> {{ character.char_name }} </td>
                         <td> {{ character.race }} </td>
                         <td> {{ character.classtype }} </td>
                         <td> {{ character.description }} </td>
                         <td> {{ character.equipment }} </td>
+                        <td>
+                            <button (click) = "updateCharacter(character.char_id)" class = "btn btn-info"> Update</button>
+                            <button (click) = "deleteCharacter(character.char_id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                            
+                        </td>
                     </tr>
                 </tbody>
             </table>

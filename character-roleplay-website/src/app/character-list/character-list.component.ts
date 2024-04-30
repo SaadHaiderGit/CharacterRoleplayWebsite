@@ -10,6 +10,8 @@ import { AppState } from '../interface/app-state';
 import { MsgResponse } from '../interface/msg-response';
 import { CharacterNavbarComponent } from '../character-navbar/character-navbar.component';
 import { UserService } from '../service/user.service';
+import { LoginRedirect } from '../function/login_redirect';
+
 
 @Component({
   selector: 'app-character-list',
@@ -27,14 +29,18 @@ export class CharacterListComponent implements OnInit {
 
   constructor(public router: Router, private characterService: CharacterService, private userService: UserService) {
     this.userService.getSessionUser.subscribe(val => this.user = val);;
+    
+    
   }
 
   ngOnInit(): void {
+    console.log(this.user);
+    LoginRedirect(this.user, this.router);
     this.display();
   }
 
   display(): void {
-    this.appState$ = this.characterService.all_characters$
+    this.appState$ = this.characterService.user_characters$(this.user)
     .pipe(
       map(response =>  {
         return { dataState: DataState.LOADED_STATE, appData: response }
@@ -46,4 +52,17 @@ export class CharacterListComponent implements OnInit {
     );  
   }
 
+  updateCharacter(id: number){
+    this.router.navigate(['character_update', id]);
+  }
+
+  deleteCharacter(id: number){
+    this.characterService.delete$(id).subscribe( data => {
+      console.log(data);
+      this.display();
+    })
+  }
+
 }
+
+

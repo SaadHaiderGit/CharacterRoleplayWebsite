@@ -11,7 +11,10 @@ import { MsgResponse } from './interface/msg-response';
 import { CharacterListComponent } from './character-list/character-list.component';
 import { CharacterNavbarComponent } from './character-navbar/character-navbar.component';
 import { CharacterFooterComponent } from './character-footer/character-footer.component';
-import { CharacterEditComponent } from './character-edit/character-edit.component';
+import { CharacterUpdateComponent } from './character-update/character-update.component';
+import { CharacterLoginComponent } from './character-login/character-login.component';
+import { CharacterRollComponent } from './character-roll/character-roll.component';
+
 
 @Component({
   selector: 'app-root',
@@ -24,7 +27,9 @@ import { CharacterEditComponent } from './character-edit/character-edit.componen
     CharacterNavbarComponent, 
     CharacterFooterComponent, 
     CharacterCreateComponent,
-    CharacterEditComponent  
+    CharacterUpdateComponent,
+    CharacterLoginComponent,
+    CharacterRollComponent 
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
