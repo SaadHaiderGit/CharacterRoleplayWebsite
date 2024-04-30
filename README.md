@@ -1,6 +1,6 @@
 # Character Roleplay Website
 
-This is a simple website where users will be able to log in to pre-made accounts, access their roleplaying characters, and add, update, or delete them as they wish. Currently, the website is work-in-progress, and will only display a listing of all characters in the database in JSON form.
+This is a website where users will be able to log in to pre-made accounts, access their roleplaying characters, and add, update, or delete them as they wish. They can also perform dice rolls at their own leisure.
 
 ## Setup 
 
@@ -21,3 +21,19 @@ Start the backend server by going to the character-roleplay-server\src\main\java
 ![image](https://github.com/SaadHaiderGit/CharacterRoleplayWebsite/assets/118562950/af786383-3bdb-4132-8d99-01a87eec235f)
 
 Then go the character-roleplay-website folder. Open this folder in a command terminal and type `ng serve`, then navigate to `http://localhost:4200/` to see the website in action.
+
+## Accounts
+
+Currently the website lacks the ability to create a new account. A few pre-made accounts from the following list can be accessed:
+1) `Saad (password: 12345)`
+2) `Hamza (password: 67890)`
+3) `Billy (password: FriendlyFriend)`
+4) `Empty (password: NoArgs)`
+
+If you wish, you can add more accounts in the CharacterRoleplayServerApplication.java file. 
+
+## Other Notes
+
+The website currently does not save user sessions; anytime you reload the page, you will be redirected back to the login page.
+
+The database server has a few pre-filled values for some accounts. It persists across sessions, but restarting the server will reset the database back to its preset values.
