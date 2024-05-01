@@ -4,7 +4,7 @@ This is a website where users will be able to log in to pre-made accounts, acces
 
 ## Setup 
 
-Postgres is necessary for this project. Make sure you have downloaded Postgres before using this application.
+Postgres and Node.js are necessary for this project. Make sure you have downloaded both before using this application.
 
 Clone the repository to a folder of your choosing. In the character-roleplay-server folder, there is an application.yml. It includes an url for the Postgres database, along with a username and password.
 
