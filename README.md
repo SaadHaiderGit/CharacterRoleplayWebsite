@@ -18,7 +18,7 @@ Finally, set up the node_modules if needed. Simply open the character-roleplay-f
 
 Start the backend server by going to the character-roleplay-server\src\main\java\com\example\characterroleplayserver folder, then access and run the CharacterRoleplayServerApplication.java file. This will activate the server and its corresponding database.
 
-![image](https://github.com/SaadHaiderGit/CharacterRoleplayWebsite/assets/118562950/af786383-3bdb-4132-8d99-01a87eec235f)
+![image](https://github.com/SaadHaiderGit/CharacterRoleplayWebsite/assets/118562950/3abf50fa-cbd8-4d32-97f8-41a3d4f12ada)
 
 Then go the character-roleplay-website folder. Open this folder in a command terminal and type `ng serve`, then navigate to `http://localhost:4200/` to see the website in action.
 
