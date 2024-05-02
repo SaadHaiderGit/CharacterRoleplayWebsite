@@ -11,5 +11,5 @@ export const routes: Routes = [
     {path: 'character_create', component: CharacterCreateComponent},
     {path: 'character_update/:id', component: CharacterUpdateComponent},
     {path: 'character_rolldice', component: CharacterRollComponent},
-    {path: '', redirectTo: 'character_list', pathMatch: 'full'}     //will change later to default to a login page
+    {path: '', redirectTo: 'character_login', pathMatch: 'full'}  
 ];
