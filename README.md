@@ -12,7 +12,7 @@ Clone the repository to a folder of your choosing. In the character-roleplay-ser
 
 Create a matching username and password in order for the backend server to access Postgres, then create a new database called 'character'. If you have a pre-existing database you want to use instead, you can change the application.yml's URL to `jdbc:postgresql://localhost:5432/{name_goes_here}`. You can also change the application.yml's values for username and password to a pre-existing combination you have saved in your Postgres application, if you so wish.
 
-Finally, set up the node_modules if needed. Simply open the character-roleplay-folder in a command terminal of your choosing, then type `npm install`.
+Set up the node_modules if needed. Simply open the character-roleplay-folder in a command terminal of your choosing, then type `npm install`. One of the imports for this project, RPG Dice Roller, will need to be downloaded too. In the terminal, type `npm install @dice-roller/rpg-dice-roller` to download the required import.
 
 ## Running the Program
 
